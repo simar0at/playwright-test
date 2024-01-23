@@ -72,7 +72,10 @@ jobs:
       PUBLIC_URL: ${{ needs.generate_workflow_vars.outputs.PUBLIC_URL }}
       fetch-depth: ${{ fromJson(needs.setup_workflow_env.outputs.fetch-depth) }}
       submodules: ${{ needs.setup_workflow_env.outputs.submodules }}
-  _2:
+  _2: 
+    permissions:
+      packages: write
+      contents: read
     needs: [setup_workflow_env, generate_workflow_vars]
     uses:  simar0at/gl-autodevops-minimal-port/.github/workflows/herokuish-tests-db-url.yaml@main
     secrets: inherit
@@ -89,6 +92,9 @@ jobs:
       PUBLIC_URL: ${{ needs.generate_workflow_vars.outputs.PUBLIC_URL }}
       submodules: ${{ needs.setup_workflow_env.outputs.submodules }}
 #  _3:
+#    permissions:
+#      packages: read
+#      contents: read
 #    needs: [setup_workflow_env, generate_workflow_vars, _1, _2]
 #    uses: simar0at/gl-autodevops-minimal-port/.github/workflows/deploy.yml@main
 #    secrets: inherit
