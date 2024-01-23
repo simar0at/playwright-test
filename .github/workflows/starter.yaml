@@ -2,8 +2,6 @@ name: workflows starter
 on:
   push: {}
   workflow_dispatch: {}
-permissions:
-  packages: write
 jobs:
   setup_workflow_env:
     runs-on: ubuntu-latest
@@ -58,6 +56,8 @@ jobs:
     outputs:     
       PUBLIC_URL: ${{ steps.generate_public_url.outputs.public_url }}
   _1:
+    permissions:
+      packages: write
     needs: [setup_workflow_env, generate_workflow_vars]
     uses:  simar0at/gl-autodevops-minimal-port/.github/workflows/build-cnb-and-push-to-registry.yaml@main
     secrets: inherit
