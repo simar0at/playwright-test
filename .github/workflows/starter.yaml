@@ -58,6 +58,7 @@ jobs:
   _1:
     permissions:
       packages: write
+      contents: read
     needs: [setup_workflow_env, generate_workflow_vars]
     uses:  simar0at/gl-autodevops-minimal-port/.github/workflows/build-cnb-and-push-to-registry.yaml@main
     secrets: inherit
