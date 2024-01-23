@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	  "test:install_browsers": "pnpm exec playwright install",
-	  "test:e2e": "pnpm exec playwright test",
-	  "test": "pnpm run test:install_browsers && pnpm run test:e2e"
+    "test:install_browsers": "pnpm exec playwright install",
+    "test:e2e": "pnpm exec playwright test",
+    "test": "pnpm run test:install_browsers && pnpm run test:e2e"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,7 @@
     "@types/node": "^20.11.5"
   },
   "engines": {
-	  "node": "20.x",
-	  "pnpm": "8.14.3"
-  }
+    "node": "20.x"
+  },
+  "packageManager": "pnpm@8.14.3+sha256.2d0363bb6c314daa67087ef07743eea1ba2e2d360c835e8fec6b5575e4ed9484"
 }
