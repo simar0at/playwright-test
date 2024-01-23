@@ -1,0 +1,21 @@
+{
+  "name": "playwright-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	  "test:install_browsers": "pnpm exec playwright install",
+	  "test:e2e": "pnpm exec playwright test",
+	  "test": "pnpm run test:install_browsers && pnpm run test:e2e"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.5"
+  },
+  "engines": {
+	  "node": "20.x"
+  }
+}
